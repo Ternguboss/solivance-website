@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0D0B08" />
+  <meta name="color-scheme" content="dark light" />
+  <script>
+    (() => {
+      const key = "solivance-theme";
+      let theme = "dark";
+      try {
+        const saved = window.localStorage.getItem(key);
+        theme = saved === "light" || saved === "dark"
+          ? saved
+          : "dark";
+      } catch {}
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+      document.querySelector('meta[name="theme-color"]')?.setAttribute(
+        "content",
+        theme === "dark" ? "#0D0B08" : "#F6F2EB"
+      );
+    })();
+  </script>
+  <meta name="description" content="Solivance is a behavioral intelligence company building computing systems for the individual, not the population average." />
+  <meta property="og:title" content="Solivance Technologies | Built around you" />
+  <meta property="og:description" content="Computing systems are built for the average. Solivance builds for the individual." />
+  <meta property="og:type" content="website" />
+  <title>Solivance Technologies | Behavioral intelligence, built around you</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2312100C'/><rect x='26' y='25' width='15' height='50' rx='7.5' fill='%23F6F2EB'/><rect x='58' y='25' width='15' height='50' rx='7.5' fill='%23D2382B'/></svg>" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <header class="site-nav" id="siteNav">
+    <a class="brand" href="#top" aria-label="Solivance home">
+      <span class="brand-name">Solivance</span><span class="brand-stop" aria-hidden="true"></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+      <a href="#company">Company</a>
+      <a href="#system">The system</a>
+      <a href="#fields">Fields</a>
+      <a href="#principles">Principles</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        role="switch"
+        aria-label="Dark mode"
+        aria-checked="false"
+        data-theme-tooltip="Switch to dark mode"
+      >
+        <span class="theme-toggle-track" aria-hidden="true">
+          <span class="theme-toggle-thumb"><i></i></span>
+          <svg class="theme-toggle-sun" viewBox="0 0 16 16" role="presentation">
+            <circle cx="8" cy="8" r="2.25"></circle>
+            <path d="M8 1.25v1.4M8 13.35v1.4M1.25 8h1.4M13.35 8h1.4M3.23 3.23l.99.99M11.78 11.78l.99.99M12.77 3.23l-.99.99M4.22 11.78l-.99.99"></path>
+          </svg>
+          <svg class="theme-toggle-moon" viewBox="0 0 16 16" role="presentation">
+            <path d="M12.6 10.45A5.4 5.4 0 0 1 5.55 3.4a5.45 5.45 0 1 0 7.05 7.05Z"></path>
+          </svg>
+        </span>
+      </button>
+
+      <a class="nav-contact" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Behavioral intelligence company
+        </p>
+
+        <h1>
+          <span class="hero-line"><span>Every system is built</span></span>
+          <span class="hero-line"><span>for the <em>average</em><span class="red-period">.</span></span></span>
+        </h1>
+
+        <p class="hero-lede">
+          Solivance builds for the individual. We sense context, form a
+          revisable hypothesis, and make one proportionate, reversible change.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#system">
+            <span class="button-label">See how it works</span>
+            <span class="button-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path d="M7 17 17 7M8 7h9v9" />
+              </svg>
+            </span>
+          </a>
+          <a class="text-link" href="#company">Read our thesis <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="hero-proof" aria-label="Our operating commitments">
+          <div><span>01</span><strong>Human-first</strong></div>
+          <div><span>02</span><strong>Science-led</strong></div>
+          <div><span>03</span><strong>Outcome-driven</strong></div>
+        </div>
+      </div>
+
+      <div class="hero-stage" id="heroStage" aria-label="An animated model showing a system adapting around one person">
+        <div class="stage-portrait-wrap" aria-hidden="true">
+          <img class="stage-portrait" src="assets/solivance-adaptive-human.webp" alt="" width="1003" height="1568" decoding="async" fetchpriority="high" />
+        </div>
+        <div class="stage-image-wash" aria-hidden="true"></div>
+        <canvas id="adaptiveField" aria-hidden="true"></canvas>
+        <div class="stage-topline">
+          <span><i class="live-dot"></i> Adaptive model</span>
+          <span>SV / HUMAN-001</span>
+        </div>
+        <div class="stage-signal signal-a" aria-hidden="true"><span>Context</span><b>01</b></div>
+        <div class="stage-signal signal-b" aria-hidden="true"><span>Rhythm</span><b>02</b></div>
+        <div class="stage-signal signal-c" aria-hidden="true"><span>Friction</span><b>03</b></div>
+
+        <div class="stage-panel stage-panel-context" aria-hidden="true">
+          <div class="stage-panel-head">
+            <span>Behavioral context</span>
+            <b><i></i> live</b>
+          </div>
+          <div class="context-row">
+            <span>Cognitive load</span>
+            <div><i style="--value: 42%"></i></div>
+            <strong>42%</strong>
+          </div>
+          <div class="context-row">
+            <span>Environmental fit</span>
+            <div><i style="--value: 76%"></i></div>
+            <strong>76%</strong>
+          </div>
+        </div>
+
+        <div class="stage-panel stage-panel-response" aria-hidden="true">
+          <span>Adaptive response</span>
+          <strong>Reduce interface density</strong>
+          <small><i></i> Applied quietly</small>
+        </div>
+
+        <div class="stage-footer" aria-hidden="true">
+          <span>Sense</span><i></i><span>Understand</span><i></i><span>Adapt</span>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <p>Built around the individual. Designed to disappear into a better day.</p>
+        <a href="#company">Scroll to explore <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <div class="field-strip" aria-label="Solivance current work and future directions">
+      <div class="field-strip-track">
+        <span>Current work / Software</span><i></i>
+        <span>Future direction / Work</span><i></i>
+        <span>Future direction / Health</span><i></i>
+        <span>Future direction / Hardware</span><i></i>
+        <span>Future direction / Environments</span><i></i>
+        <span aria-hidden="true">Current work / Software</span><i aria-hidden="true"></i>
+        <span aria-hidden="true">Future direction / Work</span><i aria-hidden="true"></i>
+        <span aria-hidden="true">Future direction / Health</span><i aria-hidden="true"></i>
+        <span aria-hidden="true">Future direction / Hardware</span><i aria-hidden="true"></i>
+        <span aria-hidden="true">Future direction / Environments</span><i aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <section class="section premise" id="company">
+      <div class="section-label" data-reveal>
+        <span>01</span>
+        <p>The company</p>
+      </div>
+
+      <div class="premise-grid">
+        <h2 data-reveal>
+          Most technology asks people to adapt to the machine.
+          <em>We reverse the relationship.</em>
+        </h2>
+
+        <div class="premise-copy" data-reveal>
+          <p class="lead-copy">
+            Solivance is a behavioral intelligence company building computing
+            systems for individual context rather than population averages.
+          </p>
+          <p>
+            The method is consistent: sense what matters, form a revisable
+            hypothesis, then make one proportionate, reversible change. The
+            person remains in control.
+          </p>
+          <a class="text-link" href="#fields">Where we apply it <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="positioning" data-comparison data-reveal>
+        <div class="positioning-side positioning-old">
+          <p class="card-kicker">The default model</p>
+          <h3>One system.<br />Millions must conform.</h3>
+          <div class="conform-visual" aria-hidden="true">
+            <div class="conform-meta">
+              <span>Different people</span>
+              <span>One fixed rule</span>
+            </div>
+            <div class="conform-flow">
+              <div class="diverse-inputs">
+                <i></i><i></i><i></i><i></i>
+              </div>
+              <div class="conform-tracks">
+                <i></i><i></i><i></i><i></i>
+              </div>
+              <div class="conform-gate">
+                <span>Fixed<br />model</span>
+              </div>
+              <div class="conform-output">
+                <i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+            <div class="conform-caption">
+              <span>Diversity in</span>
+              <strong>Uniformity out</strong>
+            </div>
+          </div>
+        </div>
+
+        <button class="positioning-shift" type="button" aria-label="Replay the shift from a rigid system to an adaptive system">
+          <span class="shift-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" role="presentation">
+              <path d="M4 10h11M10.5 5.5 15 10l-4.5 4.5" />
+            </svg>
+          </span>
+          <span class="shift-copy">
+            <small>Interaction</small>
+            <strong>Replay shift</strong>
+          </span>
+        </button>
+
+        <div class="positioning-side positioning-new">
+          <p class="card-kicker">The Solivance model</p>
+          <h3>One person.<br />The system reshapes.</h3>
+          <div class="adaptive-workspace" aria-hidden="true">
+            <div class="workspace-topline">
+              <span>Adaptive workspace</span>
+              <b><i></i> live</b>
+            </div>
+            <svg class="workspace-paths" viewBox="0 0 520 280" role="presentation">
+              <path d="M95 73 C166 70 170 137 251 140" />
+              <path d="M424 68 C351 73 353 125 269 139" />
+              <path d="M104 229 C166 218 181 164 252 145" />
+              <path d="M417 224 C355 214 343 164 270 145" />
+            </svg>
+            <div class="workspace-person">
+              <span></span>
+              <strong>One person</strong>
+              <small>context / now</small>
+            </div>
+            <div class="workspace-module module-focus">
+              <small>Focus state</small>
+              <strong>Deep work</strong>
+              <i></i>
+            </div>
+            <div class="workspace-module module-load">
+              <small>Cognitive load</small>
+              <strong>42%</strong>
+              <i></i>
+            </div>
+            <div class="workspace-module module-timing">
+              <small>Best window</small>
+              <strong>09:40</strong>
+            </div>
+            <div class="workspace-module module-interface">
+              <small>Interface</small>
+              <strong>Simplified</strong>
+            </div>
+            <div class="workspace-status">
+              <i></i>
+              System reshaped around this context
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section system-section" id="system">
+      <div class="section-label section-label-light" data-reveal>
+        <span>02</span>
+        <p>The system</p>
+      </div>
+
+      <div class="system-heading">
+        <h2 data-reveal>One intelligence loop.<br /><em>Three quiet moves.</em></h2>
+        <p data-reveal>
+          Every Solivance product follows the same method: sense context, form a
+          revisable hypothesis, then make one proportionate, reversible change.
+          The person stays in control.
+        </p>
+      </div>
+
+      <div class="loop-console" data-loop-console data-active-step="sense" data-reveal>
+        <div class="loop-steps" aria-label="Explore the Solivance intelligence loop">
+          <button class="loop-step is-active" type="button" data-loop-target="sense" aria-pressed="true">
+            <span class="loop-step-index">01</span>
+            <span class="loop-step-copy">
+              <strong>Sense</strong>
+              <small>Sense only the context relevant to this moment.</small>
+            </span>
+            <span class="loop-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" role="presentation">
+                <path d="M4 10h11M10.5 5.5 15 10l-4.5 4.5" />
+              </svg>
+            </span>
+          </button>
+
+          <button class="loop-step" type="button" data-loop-target="understand" aria-pressed="false">
+            <span class="loop-step-index">02</span>
+            <span class="loop-step-copy">
+              <strong>Understand</strong>
+              <small>Form a revisable hypothesis from the available evidence.</small>
+            </span>
+            <span class="loop-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" role="presentation">
+                <path d="M4 10h11M10.5 5.5 15 10l-4.5 4.5" />
+              </svg>
+            </span>
+          </button>
+
+          <button class="loop-step" type="button" data-loop-target="adapt" aria-pressed="false">
+            <span class="loop-step-index">03</span>
+            <span class="loop-step-copy">
+              <strong>Adapt</strong>
+              <small>Make one proportionate, reversible change with the person in control.</small>
+            </span>
+            <span class="loop-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" role="presentation">
+                <path d="M4 10h11M10.5 5.5 15 10l-4.5 4.5" />
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        <div class="loop-stage">
+          <div class="loop-stage-top">
+            <span><i></i> One adaptive trace</span>
+            <strong data-loop-status>Signals captured in context</strong>
+          </div>
+
+          <div class="causal-stage" aria-hidden="true">
+            <article class="causal-node causal-sense">
+              <div class="causal-node-heading">
+                <span>01 / Evidence</span>
+                <i>Now</i>
+              </div>
+              <div class="causal-person">
+                <span><i></i></span>
+                <div>
+                  <small>One person</small>
+                  <strong>Context, not identity</strong>
+                </div>
+              </div>
+              <div class="causal-signals">
+                <span><i></i><small>Rhythm</small><strong>09:40 peak</strong></span>
+                <span><i></i><small>Workload</small><strong>4 switches / 18 min</strong></span>
+                <span><i></i><small>Environment</small><strong>Quiet / focused</strong></span>
+              </div>
+            </article>
+
+            <div class="causal-link causal-link-in">
+              <span></span>
+              <i></i>
+              <small>relevant signals only</small>
+            </div>
+
+            <article class="causal-node causal-model">
+              <div class="causal-node-heading">
+                <span>02 / Hypothesis</span>
+                <i>Local</i>
+              </div>
+              <div class="causal-inference">
+                <small>Current hypothesis</small>
+                <strong>Deep-work window at risk</strong>
+                <p>Switching is rising inside a high-capacity period.</p>
+              </div>
+              <div class="causal-confidence">
+                <span>Pattern confidence</span>
+                <strong>0.86</strong>
+                <i><b></b></i>
+              </div>
+              <small class="causal-revisable">Revisable as context changes</small>
+            </article>
+
+            <div class="causal-link causal-link-out">
+              <span></span>
+              <i></i>
+              <small>one proportionate response</small>
+            </div>
+
+            <article class="causal-node causal-response">
+              <div class="causal-node-heading">
+                <span>03 / Response</span>
+                <i>Reversible</i>
+              </div>
+              <div class="causal-response-card">
+                <small>Protect the current window</small>
+                <strong>42 minutes</strong>
+                <span><i></i> Three alerts batched</span>
+                <span><i></i> Workspace simplified</span>
+              </div>
+              <div class="causal-control">
+                <span>Person retains control</span>
+                <strong>Undo available</strong>
+              </div>
+            </article>
+          </div>
+
+          <div class="loop-stage-bottom">
+            <span>Input <strong data-loop-input>Rhythm · workload · place</strong></span>
+            <i></i>
+            <span>Output <strong data-loop-output>Timestamped evidence</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="system-outcome" data-reveal>
+        <span class="outcome-line"></span>
+        <p>The goal is not more engagement.</p>
+        <strong>It is less friction and more agency.</strong>
+      </div>
+    </section>
+
+    <section class="section fields-section" id="fields">
+      <div class="section-label" data-reveal>
+        <span>03</span>
+        <p>Fields of application</p>
+      </div>
+
+      <div class="fields-heading" id="beaverly">
+        <div data-reveal>
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Current product / In development</p>
+          <h2>Beaverly.<br /><em>Habits that adapt.</em></h2>
+        </div>
+        <p data-reveal>
+          Beaverly is an adaptive habit system for adults with ADHD. It responds
+          to changing context and routines to make the next useful action easier
+          to begin. It is Solivance's first and only product in development.
+        </p>
+      </div>
+
+      <div class="fields-grid">
+        <figure class="beaverly-concept-visual" data-reveal>
+          <div class="beaverly-concept-media">
+            <img
+              src="assets/beaverly-adaptive-path.png?v=2"
+              alt="A hand placing the next habit card beside a book, water, and walking shoes"
+              width="1536"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="beaverly-concept-status">Concept visual / Product in development</span>
+          </div>
+          <figcaption>
+            <span>Adaptive habit formation</span>
+            <p>Many possible paths. One useful next action.</p>
+          </figcaption>
+        </figure>
+
+        <div class="future-fields-heading" data-reveal>
+          <div>
+            <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Future direction / Concept studies</p>
+            <h2>Where the method<br /><em>could go next.</em></h2>
+          </div>
+          <p>
+            These are not current products or announced launches. They are
+            visual studies of how the same behavioral method could extend from
+            software into work, health, hardware, and physical environments.
+          </p>
+        </div>
+
+        <article class="field-card future-project" data-reveal>
+          <div class="field-card-content">
+            <span class="field-number">Future direction / Work</span>
+            <h3>Attention-aware work systems</h3>
+            <p>We intend to explore coordination systems that could protect attention by adapting schedules and interface demands to a person's working rhythm.</p>
+          </div>
+          <div class="field-art cognitive-story" data-cog-demo data-mode="standard">
+            <div class="concept-label">Concept visualization / No current product</div>
+            <div class="story-head">
+              <span>Concept study / Work systems</span>
+              <small><i></i> Future research direction</small>
+            </div>
+            <div class="story-premise">
+              <small>Illustrative scenario</small>
+              <h4>What if a clear 100-minute window could be protected?</h4>
+            </div>
+            <div class="cognitive-stage" aria-hidden="true">
+              <div class="cognitive-ruler">
+                <span>09:00</span><span>10:00</span><span>11:00</span><span>12:00</span><span>13:00</span>
+              </div>
+              <div class="cognitive-window">
+                <span>09:40</span>
+                <strong>clearest window</strong>
+                <span>11:20</span>
+              </div>
+              <div class="cognitive-ghost cognitive-ghost-one">Stand-up / 09:30</div>
+              <div class="cognitive-ghost cognitive-ghost-two">Review / 10:30</div>
+              <div class="cognitive-meeting cognitive-meeting-one">
+                <small>Flexible</small>
+                <strong>Stand-up</strong>
+                <span><i>09:30</i><b>11:40</b></span>
+              </div>
+              <div class="cognitive-meeting cognitive-meeting-two">
+                <small>Flexible</small>
+                <strong>Review</strong>
+                <span><i>10:30</i><b>13:10</b></span>
+              </div>
+              <div class="cognitive-focus">
+                <small>Protected</small>
+                <strong>Research brief</strong>
+                <span>100 minutes uninterrupted</span>
+              </div>
+            </div>
+            <div class="story-action">
+              <p aria-live="polite">
+                <strong data-demo-status>Concept scenario: two flexible meetings fragment the window.</strong>
+                <small>A possible response, not an existing service.</small>
+              </p>
+              <button class="story-trigger" type="button" data-demo-toggle aria-pressed="false">
+                Explore concept
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="field-card future-project" data-reveal>
+          <div class="field-card-content">
+            <span class="field-number">Future direction / Health</span>
+            <h3>Behavioral support across a patient journey</h3>
+            <p>We intend to investigate how behavioral intelligence could support clearer patient journeys and better adherence while clinical teams retain control.</p>
+          </div>
+          <div class="field-art patient-journey" data-care-demo data-mode="standard">
+            <div class="concept-label">Concept visualization / No current product</div>
+            <div class="patient-journey-head">
+              <span>Concept study / Patient journeys</span>
+              <small><i></i> Future direction, not clinical judgment</small>
+            </div>
+            <div class="patient-journey-premise">
+              <small>Future research concept</small>
+              <h4>What if context did not restart at every handoff?</h4>
+              <p>A future system could carry relevant context across the systems a hospital already uses.</p>
+            </div>
+            <div class="patient-journey-board">
+              <div class="patient-journey-columns" aria-hidden="true">
+                <span>Patient</span>
+                <small>Context</small>
+                <span>Care team</span>
+              </div>
+              <ol class="patient-journey-handoffs">
+                <li style="--journey-step: 0">
+                  <div class="patient-journey-side patient-journey-patient">
+                    <small>Before arrival</small>
+                    <span class="patient-journey-friction">What happens next?</span>
+                    <span class="patient-journey-response">Preparation in plain language</span>
+                  </div>
+                  <div class="patient-journey-node" aria-hidden="true"><b>01</b></div>
+                  <div class="patient-journey-side patient-journey-team">
+                    <small>Preparation</small>
+                    <span class="patient-journey-friction">Clarification calls</span>
+                    <span class="patient-journey-response">Needs surfaced early</span>
+                  </div>
+                </li>
+                <li style="--journey-step: 1">
+                  <div class="patient-journey-side patient-journey-patient">
+                    <small>Check-in + care</small>
+                    <span class="patient-journey-friction">Why repeat this?</span>
+                    <span class="patient-journey-response">Relevant questions only</span>
+                  </div>
+                  <div class="patient-journey-node" aria-hidden="true"><b>02</b></div>
+                  <div class="patient-journey-side patient-journey-team">
+                    <small>Intake</small>
+                    <span class="patient-journey-friction">Repeated intake</span>
+                    <span class="patient-journey-response">Context carried forward</span>
+                  </div>
+                </li>
+                <li style="--journey-step: 2">
+                  <div class="patient-journey-side patient-journey-patient">
+                    <small>Discharge</small>
+                    <span class="patient-journey-friction">What do I do first?</span>
+                    <span class="patient-journey-response">First action made clear</span>
+                  </div>
+                  <div class="patient-journey-node" aria-hidden="true"><b>03</b></div>
+                  <div class="patient-journey-side patient-journey-team">
+                    <small>Handoff</small>
+                    <span class="patient-journey-friction">Plan re-explained</span>
+                    <span class="patient-journey-response">One ordered handoff</span>
+                  </div>
+                </li>
+                <li style="--journey-step: 3">
+                  <div class="patient-journey-side patient-journey-patient">
+                    <small>Recovery</small>
+                    <span class="patient-journey-friction">When should I get help?</span>
+                    <span class="patient-journey-response">Prompted at action time</span>
+                  </div>
+                  <div class="patient-journey-node" aria-hidden="true"><b>04</b></div>
+                  <div class="patient-journey-side patient-journey-team">
+                    <small>Follow-up</small>
+                    <span class="patient-journey-friction">Every follow-up chased</span>
+                    <span class="patient-journey-response">Exceptions surfaced</span>
+                  </div>
+                </li>
+              </ol>
+              <div class="patient-journey-spine" aria-hidden="true"><i></i></div>
+              <div class="patient-journey-carrier" aria-hidden="true"><i></i><span>Context</span></div>
+            </div>
+            <div class="patient-journey-measures">
+              <span><small>Patient</small><strong>Anxiety · treatment adherence</strong></span>
+              <span><small>Hospital</small><strong>Readmission · staff burden</strong></span>
+              <em>Possible outcomes to study</em>
+            </div>
+            <div class="patient-journey-foundation">
+              <span>Would complement existing hospital systems</span>
+              <div aria-hidden="true">
+                <i>Scheduling</i><i>Intake</i><i>EHR</i><i>Discharge</i><i>Follow-up</i>
+              </div>
+            </div>
+            <div class="story-action story-action-dark patient-journey-action">
+              <p aria-live="polite">
+                <strong data-demo-status>Concept scenario: four workflows restart the patient's context.</strong>
+                <small>A possible coordination concept. Clinical teams keep control.</small>
+              </p>
+              <button class="story-trigger story-trigger-light" type="button" data-demo-toggle aria-pressed="false">
+                Explore concept
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="field-card field-card-wide future-project" data-reveal>
+          <div class="field-card-content">
+            <span class="field-number">Long-term direction / Hardware</span>
+            <h3>Private sensing at the edge</h3>
+            <p>Longer-term research may examine private, on-device sensing that could make context legible without exporting raw biological data. No device is in development.</p>
+          </div>
+          <div class="field-art hardware-art" aria-hidden="true">
+            <div class="concept-label">Concept visualization / No device in development</div>
+            <div class="hardware-stage">
+              <div class="device-object">
+                <span class="device-crown"></span>
+                <span class="device-screen"><small>State</small><strong>steady</strong><i></i></span>
+                <i class="device-sensor sensor-a"></i><i class="device-sensor sensor-b"></i><i class="device-sensor sensor-c"></i>
+                <b class="device-signal device-signal-a"></b><b class="device-signal device-signal-b"></b><b class="device-signal device-signal-c"></b>
+              </div>
+              <div class="device-caption">
+                <span>Future concept / Study 04</span>
+                <strong>Could biological state become a useful, private signal?</strong>
+              </div>
+            </div>
+            <div class="hardware-pipeline">
+              <div class="pipeline-topline"><span>On-device research concept</span><strong><i></i> private</strong></div>
+              <div class="signal-chart">
+                <i style="--h: 32%"></i><i style="--h: 48%"></i><i style="--h: 67%"></i><i style="--h: 43%"></i>
+                <i style="--h: 78%"></i><i style="--h: 58%"></i><i style="--h: 84%"></i><i style="--h: 69%"></i>
+                <i style="--h: 91%"></i><i style="--h: 72%"></i><i style="--h: 63%"></i><i style="--h: 81%"></i>
+              </div>
+              <div class="pipeline-flow">
+                <span><small>01</small><strong>Sense</strong></span><i></i>
+                <span><small>02</small><strong>Interpret</strong></span><i></i>
+                <span><small>03</small><strong>Respond</strong></span>
+              </div>
+              <div class="pipeline-readout"><span>Illustrative signal</span><strong>Concept</strong><small>Raw data would stay local</small></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="field-card field-card-wide field-card-dark environment-field-card future-project" data-reveal>
+          <div class="field-card-content">
+            <span class="field-number">Long-term direction / Environments</span>
+            <h3>Spaces that could respond</h3>
+            <p>We intend to study how spaces might respond to sound, light, and movement while occupants remain in control. This is a research direction, not a product.</p>
+          </div>
+          <div class="field-art environment-story" data-mode="adapted">
+            <div class="concept-label concept-label-light">Concept visualization / No current product</div>
+            <div class="environment-media" aria-hidden="true">
+              <img
+                class="environment-image environment-image-fixed"
+                src="assets/solivance-adaptive-environment-v2.jpg"
+                alt=""
+                width="1586"
+                height="992"
+                loading="lazy"
+                decoding="async"
+              />
+              <svg class="environment-route" viewBox="0 0 900 560" preserveAspectRatio="none" role="presentation">
+                <path pathLength="1" d="M755 488C682 482 622 462 586 429C548 394 508 385 451 399" />
+              </svg>
+              <div class="environment-callout environment-callout-partition"><i></i><span>Acoustics could shift</span></div>
+              <div class="environment-callout environment-callout-light"><i></i><span>Task light could narrow</span></div>
+              <div class="environment-callout environment-callout-route"><i></i><span>Traffic could reroute</span></div>
+            </div>
+            <div class="environment-story-copy">
+              <span>Future study / Focus-supportive room</span>
+              <h4>One person trying to focus.<br /><em>A room that could respond.</em></h4>
+              <p>A concept for coordinating acoustics, lighting, and circulation around a stated need.</p>
+            </div>
+            <div class="environment-action">
+              <p><strong>Future research direction.</strong><small>No environment product is currently being built.</small></p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section principles-section" id="principles">
+      <div class="section-label" data-reveal>
+        <span>04</span>
+        <p>Non-negotiables</p>
+      </div>
+
+      <div class="principles-layout">
+        <div class="principles-intro">
+          <h2 data-reveal>Strong beliefs.<br /><em>Worn lightly.</em></h2>
+          <p data-reveal>
+            Behavioral science can help people or exploit them. Our principles
+            make that line operational.
+          </p>
+        </div>
+
+        <div class="principle-list">
+          <article class="principle" data-reveal>
+            <span>01</span>
+            <h3>Dignity is a design constraint.</h3>
+            <p>No dark patterns, no engineered dependency, and no business model that sells behavioral data.</p>
+          </article>
+          <article class="principle" data-reveal>
+            <span>02</span>
+            <h3>Outcomes beat engagement.</h3>
+            <p>Success means a measurably better life, not more sessions, more notifications, or more time on screen.</p>
+          </article>
+          <article class="principle" data-reveal>
+            <span>03</span>
+            <h3>Science before certainty.</h3>
+            <p>Claims follow evidence. When evidence is limited, uncertainty stays visible in the product and the story.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="horizon-section" id="horizon">
+      <div class="horizon-copy">
+        <div class="section-label section-label-light" data-reveal>
+          <span>05</span>
+          <p>The horizon</p>
+        </div>
+        <h2 data-reveal>From screen,<br />to body,<br /><em>to world.</em></h2>
+      </div>
+
+      <div class="horizon-path" data-reveal>
+        <div class="horizon-line" aria-hidden="true"><span id="horizonFill"></span></div>
+        <article class="horizon-item is-now">
+          <span class="horizon-dot"></span>
+          <p class="horizon-phase">Now</p>
+          <h3>Beaverly</h3>
+          <p>Solivance's first and only software product, currently in development.</p>
+        </article>
+        <article class="horizon-item">
+          <span class="horizon-dot"></span>
+          <p class="horizon-phase">Future direction</p>
+          <h3>Work &amp; health systems</h3>
+          <p>Potential research into attention, coordination, patient journeys, and adherence.</p>
+        </article>
+        <article class="horizon-item">
+          <span class="horizon-dot"></span>
+          <p class="horizon-phase">Long-term direction</p>
+          <h3>Hardware &amp; environments</h3>
+          <p>Private on-device sensing and responsive spaces, pursued only when evidence supports them.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-statement">
+        <p class="eyebrow" data-reveal><span class="eyebrow-dot" aria-hidden="true"></span> Work with Solivance</p>
+        <h2 data-reveal>Have a human problem<br />technology should fit <em>better?</em></h2>
+        <p class="contact-lede" data-reveal>
+          Talk to us about Beaverly, research partnerships, or a problem that
+          deserves a system built for the individual.
+        </p>
+        <a class="contact-email" href="mailto:admin@solivancetechnologies.com" data-reveal>
+          admin@solivancetechnologies.com <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html" data-reveal>
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="honeypot"><label>Do not fill this out: <input name="bot-field" /></label></p>
+
+        <div class="form-row">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" autocomplete="name" placeholder="Your name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" placeholder="you@company.com" required />
+          </label>
+        </div>
+
+        <label>
+          <span>What should we discuss?</span>
+          <select name="interest" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="Product partnership">Product partnership</option>
+            <option value="Research collaboration">Research collaboration</option>
+            <option value="Future application research">Future application research</option>
+            <option value="Investment">Investment</option>
+            <option value="Something else">Something else</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" placeholder="Tell us about the problem, not just the solution." required></textarea>
+        </label>
+
+        <button class="button button-primary button-submit" type="submit">
+          <span class="button-label" aria-live="polite">Send message</span>
+          <span class="button-arrow button-arrow-up" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation">
+              <path d="M7 17 17 7M8 7h9v9" />
+            </svg>
+          </span>
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand brand-footer" href="#top" aria-label="Back to top">
+      <span class="brand-name">Solivance</span><span class="brand-stop" aria-hidden="true"></span>
+    </a>
+    <p>Behavioral intelligence, built around you.</p>
+    <div class="footer-meta">
+      <span>© <span id="year">2026</span> Solivance Technologies</span>
+      <span>Abuja, Nigeria / Working globally</span>
+    </div>
+  </footer>
+
+  <script src="script.js?v=17"></script>
+</body>
+</html>

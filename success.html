@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0D0B08" />
+  <meta name="color-scheme" content="dark light" />
+  <script>
+    (() => {
+      const key = "solivance-theme";
+      let theme = "dark";
+      try {
+        const saved = window.localStorage.getItem(key);
+        theme = saved === "light" || saved === "dark"
+          ? saved
+          : "dark";
+      } catch {}
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+      document.querySelector('meta[name="theme-color"]')?.setAttribute(
+        "content",
+        theme === "dark" ? "#0D0B08" : "#F6F2EB"
+      );
+    })();
+  </script>
+  <title>Message received | Solivance Technologies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=16" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2312100C'/><rect x='26' y='25' width='15' height='50' rx='7.5' fill='%23F6F2EB'/><rect x='58' y='25' width='15' height='50' rx='7.5' fill='%23D2382B'/></svg>" />
+  <style>
+    .success-page {
+      min-height: 100svh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: 2rem var(--page-pad);
+      background:
+        radial-gradient(circle at 75% 28%, rgba(210, 56, 43, 0.1), transparent 25rem),
+        var(--theme-bg);
+    }
+
+    .success-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--theme-line);
+    }
+
+    .success-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .success-index {
+      color: var(--theme-subtle);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .success-main {
+      display: grid;
+      place-items: center;
+      padding: 5rem 0;
+    }
+
+    .success-card {
+      width: min(46rem, 100%);
+      text-align: center;
+    }
+
+    .success-mark {
+      display: grid;
+      place-items: center;
+      width: 4.4rem;
+      height: 4.4rem;
+      margin: 0 auto 2.5rem;
+      border-radius: 50%;
+      color: var(--paper);
+      background: var(--red);
+      font-size: 1.45rem;
+      box-shadow: 0 1.2rem 3rem rgba(210, 56, 43, 0.23);
+    }
+
+    .success-card h1 {
+      margin-bottom: 1.5rem;
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 8vw, 7.2rem);
+      font-weight: 300;
+      letter-spacing: -0.06em;
+      line-height: 0.9;
+    }
+
+    .success-card h1 em {
+      color: var(--red);
+      font-weight: 300;
+    }
+
+    .success-card p {
+      max-width: 34rem;
+      margin: 0 auto 2.5rem;
+      color: var(--theme-muted);
+      font-size: 1.05rem;
+    }
+
+    .success-footer {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--theme-line);
+      color: var(--theme-subtle);
+      font-size: 0.63rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 560px) {
+      .success-page { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+      .success-index { display: none; }
+      .success-footer { gap: 1rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="success-page">
+    <header class="success-header">
+      <a class="brand" href="/" aria-label="Solivance home">
+        <span class="brand-name">Solivance</span><span class="brand-stop" aria-hidden="true"></span>
+      </a>
+      <div class="success-header-actions">
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          role="switch"
+          aria-label="Dark mode"
+          aria-checked="false"
+          data-theme-tooltip="Switch to dark mode"
+        >
+          <span class="theme-toggle-track" aria-hidden="true">
+            <span class="theme-toggle-thumb"><i></i></span>
+            <svg class="theme-toggle-sun" viewBox="0 0 16 16" role="presentation">
+              <circle cx="8" cy="8" r="2.25"></circle>
+              <path d="M8 1.25v1.4M8 13.35v1.4M1.25 8h1.4M13.35 8h1.4M3.23 3.23l.99.99M11.78 11.78l.99.99M12.77 3.23l-.99.99M4.22 11.78l-.99.99"></path>
+            </svg>
+            <svg class="theme-toggle-moon" viewBox="0 0 16 16" role="presentation">
+              <path d="M12.6 10.45A5.4 5.4 0 0 1 5.55 3.4a5.45 5.45 0 1 0 7.05 7.05Z"></path>
+            </svg>
+          </span>
+        </button>
+        <span class="success-index">Message / received</span>
+      </div>
+    </header>
+
+    <main class="success-main">
+      <div class="success-card">
+        <div class="success-mark" aria-hidden="true">✓</div>
+        <h1>Received.<br /><em>Thank you.</em></h1>
+        <p>
+          Your message is on its way. One human will read it, and we usually
+          reply within one business day.
+        </p>
+        <a class="button button-primary" href="/">
+          <span class="button-label">Return to Solivance</span>
+          <span class="button-arrow button-arrow-back" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation">
+              <path d="M17 7 7 17M7 8v9h9" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </main>
+
+    <footer class="success-footer">
+      <span>Behavioral intelligence, built around you.</span>
+      <span>Abuja, Nigeria / Working globally</span>
+    </footer>
+  </div>
+  <script src="script.js?v=16"></script>
+</body>
+</html>
